@@ -1,1 +1,1 @@
-var typestart = new window.Typestart("strong");
+var feedbackWidget = new window.Feeedback();

@@ -1,5 +1,3 @@
-interface FeeedbackConstructor {
-  value?: string;
-}
+interface FeeedbackConstructor {}
 
 export { FeeedbackConstructor };

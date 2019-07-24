@@ -1,1 +1,1 @@
-const typestart = new (<any> window).Typestart("strong");
+const feedbackWidget = new (<any> window).Feeedback();

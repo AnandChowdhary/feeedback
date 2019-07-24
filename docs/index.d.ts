@@ -1,6 +1,5 @@
-import { Typerface } from "./interfaces";
+import { FeeedbackConstructor } from "./interfaces";
 import "./styles/index.scss";
-export default class Typestart implements Typerface {
-    value: string;
-    constructor(el?: string);
+export default class Feeedback implements FeeedbackConstructor {
+    constructor();
 }

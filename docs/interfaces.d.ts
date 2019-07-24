@@ -1,4 +1,3 @@
-interface Typerface {
-    value?: string;
+interface FeeedbackConstructor {
 }
-export { Typerface };
+export { FeeedbackConstructor };
