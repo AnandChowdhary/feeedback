@@ -15,12 +15,12 @@
     "start": "concurrently \"yarn watch\" \"yarn watch-demo\" \"yarn serve\" \"yarn prettier-watch\"",
     "build": "webpack -p --config webpack.config.ts",
     "build-demo": "tsc docs/demo.ts",
-    "watch": "onchange 'src/**/*.{js,jsx,ts,tsx,scss,css}' -- yarn build",
+    "watch": "onchange 'src/**/*.{js,jsx,ts,tsx,scss,html,css}' -- yarn build",
     "watch-demo": "onchange 'docs/{demo.ts,scss,css}' -- yarn build-demo",
     "serve": "cd docs && live-server && cd ../",
     "test": "jest --coverage --coverageReporters=text-lcov | coveralls",
     "test-without-coverage": "jest",
-    "prettier-watch": "onchange 'src/**/*.{js,jsx,ts,tsx,scss,css}' -- prettier --write {{changed}}"
+    "prettier-watch": "onchange 'src/**/*.{js,jsx,ts,tsx,scss,html,css}' -- prettier --write {{changed}}"
   },
   "devDependencies": {
     "@types/jest": "^24.0.5",

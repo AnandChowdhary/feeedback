@@ -6,3 +6,8 @@ feedbackWidget.on("*", (type: string, event: any) => {
 
 // Open the widget on launch
 feedbackWidget.open();
+
+const button = document.querySelector(".button");
+if (button) {
+  button.addEventListener("click", () => feedbackWidget.open());
+}
