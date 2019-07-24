@@ -7,4 +7,6 @@ export default class Feeedback extends TypeStart {
     constructor(settings: Settings);
     create(): void;
     open(): void;
+    close(): void;
+    private listen;
 }

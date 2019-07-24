@@ -20,11 +20,38 @@ export default class Feeedback extends TypeStart {
     if (appendTo) {
       appendTo.appendChild(this.container);
     }
+    this.listen();
     this.emitter.emit("created", this.container);
   }
   open() {
     if (!this.container) this.create();
+    if (this.container) this.container.style.display = "block";
     this.emitter.emit("open");
+  }
+  close() {
+    if (this.container) this.container.style.display = "none";
+    this.emitter.emit("close");
+  }
+  private listen() {
+    if (!this.container) return;
+    const form = this.container.querySelector("form");
+    if (!form) return;
+    form.addEventListener("submit", event => {
+      event.preventDefault();
+      if (form.parentElement) {
+        const success = form.parentElement.querySelector(
+          ".success"
+        ) as HTMLDivElement;
+        const error = form.parentElement.querySelector(
+          ".error"
+        ) as HTMLDivElement;
+        form.style.display = "none";
+        if (success) success.style.display = "block";
+      }
+      setTimeout(() => {
+        this.close();
+      }, this.settings.messageDelay || 3333);
+    });
   }
 }
 
