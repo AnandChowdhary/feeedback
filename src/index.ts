@@ -2,6 +2,7 @@ import TypeStart from "./typestart";
 import { Settings, Result, Locale } from "./interfaces";
 import widget from "./widget.html";
 import "./styles/index.scss";
+import { random } from "./random";
 
 const locale: Locale = {
   TITLE: "Give us feedback",
@@ -31,7 +32,7 @@ export default class Feeedback extends TypeStart {
   id: string;
   constructor(settings: Settings) {
     super();
-    this.id = "anand";
+    this.id = `feeedback-${random()}`;
     this.settings = settings || {};
     this.emitter.emit("ready");
   }
