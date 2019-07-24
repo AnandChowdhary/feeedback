@@ -7,8 +7,9 @@
 [![NPM version](https://img.shields.io/npm/v/feeedback.svg)](https://www.npmjs.com/package/feeedback)
 [![Types](https://img.shields.io/npm/types/feeedback.svg)](https://www.npmjs.com/package/feeedback)
 
-
 Feeedback is a JavaScript widget to easily collect feedback from your users. It's small, accessible, and customizable.
+
+![Feeedback demo](https://user-images.githubusercontent.com/2841780/61782911-8aaa8f00-ae24-11e9-9c98-60c0e264b839.gif)
 
 ## ⭐ Getting started
 
