@@ -15,5 +15,9 @@ export interface Settings {
     messageDelay?: number;
     onSubmit?(result: Result): Promise<any>;
     postResults: FetchSettings;
+    locale?: Locale;
+}
+export interface Locale {
+    [index: string]: string;
 }
 export {};

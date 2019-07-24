@@ -1,69 +1,63 @@
 <dialog open class="feeedback-dialog">
-  <button class="close" aria-label="Close feedback modal">&times;</button>
-  <h1>Give us feedback</h1>
-  <p>What do you think of this webpage?</p>
+  <button class="close" aria-label="__CLOSE__">&times;</button>
+  <h1>__TITLE__</h1>
+  <p>__TEXT__</p>
   <form method="dialog">
     <div class="emojis">
       <label>
-        <input type="radio" name="emoji_ID_" value="5" />
-        <span class="emoji" aria-label="Very happy">😀</span>
+        <input type="radio" name="emoji__ID__" value="5" />
+        <span class="emoji" aria-label="__LABEL_EMOJI_5__">😀</span>
       </label>
       <label>
-        <input type="radio" name="emoji_ID_" value="4" />
-        <span class="emoji" aria-label="Happy">🙂</span>
+        <input type="radio" name="emoji__ID__" value="4" />
+        <span class="emoji" aria-label="__LABEL_EMOJI_4__">🙂</span>
       </label>
       <label>
-        <input type="radio" name="emoji_ID_" value="3" />
-        <span class="emoji" aria-label="Neutral">😐</span>
+        <input type="radio" name="emoji__ID__" value="3" />
+        <span class="emoji" aria-label="__LABEL_EMOJI_3__">😐</span>
       </label>
       <label>
-        <input type="radio" name="emoji_ID_" value="2" />
-        <span class="emoji" aria-label="Sad">🙁</span>
+        <input type="radio" name="emoji__ID__" value="2" />
+        <span class="emoji" aria-label="__LABEL_EMOJI_2__">🙁</span>
       </label>
       <label>
-        <input type="radio" name="emoji_ID_" value="1" />
-        <span class="emoji" aria-label="Very sad">😢</span>
+        <input type="radio" name="emoji__ID__" value="1" />
+        <span class="emoji" aria-label="__LABEL_EMOJI_1__">😢</span>
       </label>
     </div>
     <div class="step-2">
       <label>
-        <span style="display: none" class="textarea-label label_ID_-1"
-          >What didn't you like?</span
+        <span style="display: none" class="textarea-label label__ID__-1"
+          >__LABEL_TEXT_1__</span
         >
-        <span style="display: none" class="textarea-label label_ID_-2"
-          >What didn't you like?</span
+        <span style="display: none" class="textarea-label label__ID__-2"
+          >__LABEL_TEXT_2__</span
         >
-        <span style="display: none" class="textarea-label label_ID_-3"
-          >Do you have any comments?</span
+        <span style="display: none" class="textarea-label label__ID__-3"
+          >__LABEL_TEXT_3__</span
         >
-        <span style="display: none" class="textarea-label label_ID_-4"
-          >What did you like? Any comments?</span
+        <span style="display: none" class="textarea-label label__ID__-4"
+          >__LABEL_TEXT_4__</span
         >
-        <span style="display: none" class="textarea-label label_ID_-5"
-          >What did you like? Any comments?</span
+        <span style="display: none" class="textarea-label label__ID__-5"
+          >__LABEL_TEXT_5__</span
         >
-        <textarea
-          name="message_ID_"
-          placeholder="Enter your feedback here"
-        ></textarea>
+        <textarea name="message__ID__" placeholder="__PLACEHOLDER__"></textarea>
       </label>
-      <button>Submit feedback</button>
+      <button>__SUBMIT__</button>
     </div>
   </form>
   <div class="loading">
     <div class="large-emoji">⌛</div>
-    <p>Submitting your feedback...</p>
+    <p>__SUBMITTING__</p>
   </div>
   <div class="success">
     <div class="large-emoji">🙌</div>
-    <p>Thank you for your feedback!</p>
+    <p>__SUCCESS__</p>
   </div>
   <div class="error">
     <div class="large-emoji">🚫</div>
-    <p>
-      Unfortunately, we weren't able to save your feedback because of an
-      internal error.
-    </p>
+    <p>__ERROR__</p>
   </div>
 </dialog>
 <div class="feeedback-background"></div>
