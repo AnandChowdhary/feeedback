@@ -16,7 +16,7 @@ export interface Settings {
   appendTo?: Element;
   messageDelay?: number;
   onSubmit?(result: Result): Promise<any>;
-  postResults: FetchSettings;
+  postResults?: FetchSettings;
   locale?: Locale;
 }
 
