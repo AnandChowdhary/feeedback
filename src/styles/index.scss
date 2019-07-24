@@ -77,7 +77,8 @@
   }
 
   .success,
-  .error {
+  .error,
+  .loading {
     display: none;
     .large-emoji {
       font-size: 300%;

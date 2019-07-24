@@ -8,5 +8,6 @@ export default class Feeedback extends TypeStart {
     create(): void;
     open(): void;
     close(): void;
+    private submit;
     private listen;
 }

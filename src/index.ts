@@ -1,5 +1,5 @@
 import TypeStart from "./typestart";
-import { Settings } from "./interfaces";
+import { Settings, Result } from "./interfaces";
 import widget from "./widget.html";
 import "./styles/index.scss";
 
@@ -32,6 +32,26 @@ export default class Feeedback extends TypeStart {
     if (this.container) this.container.style.display = "none";
     this.emitter.emit("close");
   }
+  private submit(result: Result) {
+    return new Promise((resolve, reject) => {
+      if (typeof this.settings.onSubmit === "function") {
+        this.settings
+          .onSubmit(result)
+          .then(result => resolve(result))
+          .catch(error => reject(error));
+      } else if (typeof this.settings.postResults === "object") {
+        fetch(this.settings.postResults.endpoint, {
+          method: this.settings.postResults.method,
+          body: JSON.stringify(result),
+          ...this.settings.postResults.fetchOptions
+        })
+          .then(result => resolve(result))
+          .catch(error => reject(error));
+      } else {
+        reject(new Error("no-endpoint"));
+      }
+    });
+  }
   private listen() {
     if (!this.container) return;
     const form = this.container.querySelector("form");
@@ -39,18 +59,45 @@ export default class Feeedback extends TypeStart {
     form.addEventListener("submit", event => {
       event.preventDefault();
       if (form.parentElement) {
+        const loading = form.parentElement.querySelector(
+          ".loading"
+        ) as HTMLDivElement | null;
         const success = form.parentElement.querySelector(
           ".success"
-        ) as HTMLDivElement;
+        ) as HTMLDivElement | null;
         const error = form.parentElement.querySelector(
           ".error"
-        ) as HTMLDivElement;
+        ) as HTMLDivElement | null;
         form.style.display = "none";
-        if (success) success.style.display = "block";
+        if (loading) loading.style.display = "block";
+        let rating = "0";
+        let message = "";
+        const ratingInput = form.querySelector(
+          "input[name='option_ID_']"
+        ) as HTMLInputElement | null;
+        if (ratingInput) rating = ratingInput.value;
+        const messageInput = form.querySelector(
+          "input[name='option_ID_']"
+        ) as HTMLInputElement | null;
+        if (messageInput) message = messageInput.value;
+        this.submit({
+          rating: parseInt(rating),
+          message
+        } as Result)
+          .then(() => {
+            if (loading) loading.style.display = "none";
+            if (success) success.style.display = "block";
+          })
+          .catch(error => {
+            if (loading) loading.style.display = "none";
+            if (error) error.style.display = "block";
+          })
+          .finally(() => {
+            setTimeout(() => {
+              this.close();
+            }, this.settings.messageDelay || 2500);
+          });
       }
-      setTimeout(() => {
-        this.close();
-      }, this.settings.messageDelay || 3333);
     });
   }
 }
