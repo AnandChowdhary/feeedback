@@ -1,8 +1,8 @@
-import { Typerface } from "./interfaces";
+import { FeeedbackConstructor } from "./interfaces";
 import { random } from "./random";
 import "./styles/index.scss";
 
-export default class Typestart implements Typerface {
+export default class Feeedback implements FeeedbackConstructor {
   value: string;
   constructor(el?: string) {
     this.value = random();
@@ -14,4 +14,4 @@ export default class Typestart implements Typerface {
   }
 }
 
-(<any>window).Typestart = Typestart;
+(<any>window).Feeedback = Feeedback;
