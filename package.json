@@ -29,6 +29,7 @@
     "concurrently": "^4.1.0",
     "coveralls": "^3.0.2",
     "css-loader": "^3.0.0",
+    "html-loader": "^0.5.5",
     "jest": "^24.1.0",
     "live-server": "^1.2.1",
     "node-sass": "^4.11.0",
@@ -60,5 +61,8 @@
       "json",
       "node"
     ]
+  },
+  "dependencies": {
+    "mitt": "^1.1.3"
   }
 }

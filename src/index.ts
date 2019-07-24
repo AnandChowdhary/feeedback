@@ -1,10 +1,13 @@
-import { FeeedbackConstructor } from "./interfaces";
-import { random } from "./random";
+import TypeStart from "./typestart";
+import widget from "./widget.html";
 import "./styles/index.scss";
 
-export default class Feeedback implements FeeedbackConstructor {
+export default class Feeedback extends TypeStart {
   constructor() {
-    console.log("I am mounted!");
+    super();
+  }
+  open() {
+    this.emitter.emit("open", widget);
   }
 }
 

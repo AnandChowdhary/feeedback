@@ -1,3 +1,0 @@
-interface FeeedbackConstructor {
-}
-export { FeeedbackConstructor };
