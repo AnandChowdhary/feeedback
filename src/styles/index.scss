@@ -37,6 +37,7 @@
       width: 100%;
       border: 1px solid #ddd;
       box-sizing: border-box;
+      margin-top: 1rem;
     }
 
     textarea {
@@ -58,7 +59,6 @@
   .emojis {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 1rem;
     input[type="radio"] {
       position: absolute;
       width: 1px;
@@ -88,10 +88,16 @@
     }
   }
 
+  .step-2 {
+    margin-top: 1rem;
+    display: none;
+  }
+
   .success,
   .error,
   .loading {
     display: none;
+    text-align: center;
     .large-emoji {
       font-size: 300%;
     }
@@ -116,9 +122,11 @@
     }
   }
 
-  p,
   label span {
     display: block;
+  }
+
+  p {
     margin: 0 0 1rem 0;
   }
 }

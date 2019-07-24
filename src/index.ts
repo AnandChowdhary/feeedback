@@ -99,6 +99,27 @@ export default class Feeedback extends TypeStart {
     if (close) close.addEventListener("click", () => this.close());
     const background = this.container.querySelector(".feeedback-background");
     if (background) background.addEventListener("click", () => this.close());
+    const ratingInputs = form.querySelectorAll(
+      "input[name='emoji_ID_']"
+    ) as NodeListOf<HTMLInputElement>;
+    for (let i = 0; i < ratingInputs.length; i++) {
+      ratingInputs[i].addEventListener("change", () => {
+        if (ratingInputs[i].value) {
+          const step2 = form.querySelector(".step-2") as HTMLElement | null;
+          if (step2) step2.style.display = "block";
+          const labels = form.querySelectorAll(".textarea-label") as NodeListOf<
+            HTMLElement
+          >;
+          for (let j = 0; j < labels.length; j++) {
+            labels[j].style.display = "none";
+          }
+          const label = form.querySelector(
+            `.label_ID_-${ratingInputs[i].value}`
+          ) as HTMLElement | null;
+          if (label) label.style.display = "block";
+        }
+      });
+    }
   }
   private formSubmit(event: Event) {
     event.preventDefault();
