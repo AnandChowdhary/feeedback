@@ -1,4 +1,6 @@
-var feedbackWidget = new window.Feeedback();
+var feedbackWidget = new window.Feeedback({
+    onSubmit: function () { return new Promise(function (resolve) { return setTimeout(function () { return resolve(); }, 1000); }); }
+});
 feedbackWidget.on("*", function (type, event) {
     console.log("Emitted " + type + " event", event);
 });

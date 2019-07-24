@@ -1,32 +1,36 @@
 <dialog open class="feeedback-dialog">
+  <button class="close" aria-label="Close feedback modal">&times;</button>
   <h1>Give us feedback</h1>
   <p>What do you think of this webpage?</p>
   <form method="dialog">
     <div class="emojis">
       <label>
-        <input type="radio" name="option_ID_" value="5" />
+        <input type="radio" name="emoji_ID_" value="5" />
         <span class="emoji" aria-label="Very happy">😀</span>
       </label>
       <label>
-        <input type="radio" name="option_ID_" value="4" />
+        <input type="radio" name="emoji_ID_" value="4" />
         <span class="emoji" aria-label="Happy">🙂</span>
       </label>
       <label>
-        <input type="radio" name="option_ID_" value="3" />
+        <input type="radio" name="emoji_ID_" value="3" />
         <span class="emoji" aria-label="Neutral">😐</span>
       </label>
       <label>
-        <input type="radio" name="option_ID_" value="2" />
+        <input type="radio" name="emoji_ID_" value="2" />
         <span class="emoji" aria-label="Sad">🙁</span>
       </label>
       <label>
-        <input type="radio" name="option_ID_" value="1" />
+        <input type="radio" name="emoji_ID_" value="1" />
         <span class="emoji" aria-label="Very sad">😢</span>
       </label>
     </div>
     <label>
       <span>Do you have any comments?</span>
-      <textarea placeholder="Enter your feedback here"></textarea>
+      <textarea
+        name="message_ID_"
+        placeholder="Enter your feedback here"
+      ></textarea>
     </label>
     <button>Submit feedback</button>
   </form>
@@ -46,4 +50,4 @@
     </p>
   </div>
 </dialog>
-<div class="feeedback-background">Hello?</div>
+<div class="feeedback-background"></div>

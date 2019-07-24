@@ -8,6 +8,9 @@ export default class Feeedback extends TypeStart {
     create(): void;
     open(): void;
     close(): void;
+    reset(): void;
     private submit;
+    private trapFocus;
     private listen;
+    private formSubmit;
 }

@@ -1,4 +1,6 @@
-const feedbackWidget = new (<any> window).Feeedback();
+const feedbackWidget = new (<any> window).Feeedback({
+  onSubmit: () => new Promise(resolve => setTimeout(() => resolve(), 1000))
+});
 
 feedbackWidget.on("*", (type: string, event: any) => {
   console.log(`Emitted ${type} event`, event);
