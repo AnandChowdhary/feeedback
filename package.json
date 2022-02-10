@@ -32,7 +32,7 @@
     "html-loader": "^0.5.5",
     "jest": "^24.1.0",
     "live-server": "^1.2.1",
-    "node-sass": "^4.11.0",
+    "node-sass": "^7.0.0",
     "onchange": "^6.0.0",
     "prettier": "^1.16.4",
     "sass-loader": "^7.1.0",
